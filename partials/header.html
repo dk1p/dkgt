@@ -1,0 +1,151 @@
+<!-- ==========================
+     NAVIGATION
+     (Shared partial — loaded into every page by script.js
+     via <div data-include="header"></div>. Edit ONLY here;
+     changes apply site-wide automatically.)
+========================== -->
+<nav>
+
+  <a class="nav-logo" href="/index.html">
+    <img src="/image/digitalpresence-logo.png" alt="DK Global Technologies">
+    <span>Global Technologies</span>
+  </a>
+
+  <ul class="nav-links">
+
+    <li>
+      <a href="/index.html" data-page="index">Home</a>
+    </li>
+
+    <!-- Company -->
+    <li>
+      <a href="/about.html" data-page="about">
+        Company
+        <span class="arrow">▼</span>
+      </a>
+
+      <div class="mega-drop">
+
+        <div class="drop-col">
+          <h4>The Company</h4>
+
+          <a href="/about.html">About Us</a>
+          <a href="/about.html#clients">Clients</a>
+          <a href="/about.html#careers">Careers</a>
+          <a href="/about.html#internship">Internship</a>
+        </div>
+
+        <div class="drop-col">
+          <h4>Updates</h4>
+
+          <a href="/blog.html">Blog</a>
+          <a href="/blog.html#case-studies">Case Studies</a>
+          <a href="/works.html">Our Works</a>
+        </div>
+
+      </div>
+    </li>
+
+    <!-- Services -->
+    <li>
+      <a href="/services.html" data-page="services">
+        Services
+        <span class="arrow">▼</span>
+      </a>
+      <div class="mega-drop">
+        <div class="drop-col">
+          <h4>Core Services</h4>
+          <a href="/services.html#web-development">Web Development</a>
+          <a href="/services.html#seo">SEO Optimization</a>
+          <a href="/services.html#content-marketing">Content Marketing</a>
+          <a href="/services.html#ui-ux-design">Social Media</a>
+        </div>
+        <div class="drop-col">
+          <h4>Digital</h4>
+          <a href="/services.html#digital-marketing">Digital Marketing</a>
+          <a href="/services.html#performance-marketing">Performance Marketing</a>
+        </div>
+        <div class="drop-col">
+          <h4>AI</h4>
+          <a href="/services.html">Agentic AI Strategy</a>
+          <a href="/services.html">AI Chatbot</a>
+        </div>
+        <div class="drop-col">
+          <h4>Success Stories</h4>
+          <div class="story-card">
+            <div class="story-img"><img src="image/menu.png"></div>
+            <div class="story-body">
+              <a class="nav-cta" href="/blog.html#case-studies">Read Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- Works: each link opens that service's menu on the works page.
+         The part after # must match the works page: web-development, seo-optimization,
+         content-marketing, social-media, performance-marketing, designs -->
+    <li>
+      <a href="/works.html" data-page="works">
+        Works
+        <span class="arrow">▼</span>
+      </a>
+      <div class="mega-drop">
+        <div class="drop-col">
+          <h4>Development</h4>
+          <a href="/works.html#web-development">Web Development</a>
+          <a href="/works.html#seo-optimization">SEO Optimization</a>
+          <a href="/works.html#content-marketing">Content Marketing</a>
+          <a href="/works.html#social-media">Social Media</a>
+        </div>
+        <div class="drop-col">
+          <h4>Digital</h4>
+          <a href="/works.html#performance-marketing">Performance Marketing</a>
+          <a href="/works.html#designs">Designs</a>
+        </div>
+        <div class="drop-col">
+          <h4>AI</h4>
+          <a href="/works.html">Agentic AI Strategy</a>
+          <a href="/works.html">AI Chatbot</a>
+        </div>
+        <div class="drop-col">
+          <h4>Success Stories</h4>
+          <div class="story-card">
+            <div class="story-img"><img src="image/menu.png"></div>
+            <div class="story-body">
+              <a class="nav-cta" href="/blog.html#case-studies">Read Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- Resources -->
+    <li>
+
+      <a href="/documentation.html" data-page="documentation">
+        Resources
+        <span class="arrow">▼</span>
+      </a>
+
+      <div class="simple-drop">
+
+        <a href="/documentation.html">Documentation</a>
+        <a href="/documentation.html#privacy-policy">Privacy Policy</a>
+        <a href="/documentation.html#terms-of-service">Terms of Service</a>
+
+      </div>
+
+    </li>
+
+  </ul>
+
+  <a href="/contact.html" class="nav-cta" data-page="contact">
+    Contact Us
+  </a>
+
+  <button class="nav-toggle" id="navToggle">
+    <span></span>
+  </button>
+
+</nav>
