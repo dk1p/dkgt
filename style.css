@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════
-   DK Global Technologies — Main Stylesheet
+   DK Digital Presence — Main Stylesheet
    ══════════════════════════════════════ */
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -474,7 +474,7 @@ nav{
 }
 
 .btn{
-  margin:10px;
+  margin-top:30px;
   padding:14px 32px;
   background:linear-gradient(135deg,#d4af37,#ffd700);
   color:#000;
@@ -2094,6 +2094,7 @@ nav{
     .visit-project{
         width:100%;
         min-width:0;
+        height:25px;
     }
 }
 @media (max-width:480px){
@@ -2504,7 +2505,7 @@ nav{
 
 .logo-content h4{
     margin:0;
-    font-size:20px;
+    font-size:25px;
     font-weight:700;
     background:
     linear-gradient(
@@ -3380,7 +3381,7 @@ nav{
 }
 
 /* ══════════════════════════════════════
-   DK Global Technologies — Works page
+   DK Digital Presence — Works page
    Loaded after style.css. Every class is prefixed "wk-"
    so nothing here can clash with the rest of the site.
    ══════════════════════════════════════ */
@@ -3676,3 +3677,46 @@ body.wk-lock{overflow:hidden}
   .wk-r-kw table{min-width:0}
   .wk-g{width:36px; height:36px}
 }
+
+/* ==========================================================
+   HOME PAGE – SECTION ORDER & RESPONSIVE SPACING
+   Order: hero > project > satisfaction > services > about > process
+   One shared vertical rhythm + side gutter for every section.
+========================================================== */
+:root{
+  --sec-y: 110px;
+  --sec-x: 8%;
+}
+.project-showcase,
+.sr-section,
+.services-section,
+.about-section,
+.process-section{
+  padding-top: var(--sec-y);
+  padding-bottom: var(--sec-y);
+  padding-left: var(--sec-x);
+  padding-right: var(--sec-x);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+.hero{ min-height:100vh; min-height:100svh; box-sizing:border-box; }
+
+@media (max-width:1200px){
+  :root{ --sec-y:96px; --sec-x:6%; }
+}
+@media (max-width:991px){
+  :root{ --sec-y:80px; --sec-x:5%; }
+}
+@media (max-width:767px){
+  :root{ --sec-y:64px; --sec-x:20px; }
+}
+@media (max-width:480px){
+  :root{ --sec-y:52px; --sec-x:16px; }
+}
+@media (max-width:360px){
+  :root{ --sec-y:44px; --sec-x:14px; }
+}
+.project-showcase,
+.process-section{ overflow:hidden; }
