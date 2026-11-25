@@ -31,8 +31,8 @@ function loadInclude(selector, url) {
 
 document.addEventListener('DOMContentLoaded', () => {
   Promise.all([
-    loadInclude('[data-include="header"]', '/partials/header.html'),
-    loadInclude('[data-include="footer"]', '/partials/footer.html')
+    loadInclude('[data-include="header"]', 'partials/header.html'),
+    loadInclude('[data-include="footer"]', 'partials/footer.html')
   ]).then(() => {
     initMobileNav();
     setActiveNavLink();
