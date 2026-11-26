@@ -474,7 +474,7 @@ nav{
 }
 
 .btn{
-  margin:10px;
+  margin-top:30px;
   padding:14px 32px;
   background:linear-gradient(135deg,#d4af37,#ffd700);
   color:#000;
@@ -1931,7 +1931,7 @@ nav{
 .projectSlider{
     width:100%;
     overflow:visible;
-    padding:6px 0 20px;
+    padding:20px 0 20px;
 }
 .project-showcase .swiper-slide{
     width:min(78vw,620px);
@@ -2094,7 +2094,6 @@ nav{
     .visit-project{
         width:100%;
         min-width:0;
-        height:25px;
     }
 }
 @media (max-width:480px){
@@ -3678,45 +3677,141 @@ body.wk-lock{overflow:hidden}
   .wk-g{width:36px; height:36px}
 }
 
-/* ==========================================================
-   HOME PAGE – SECTION ORDER & RESPONSIVE SPACING
-   Order: hero > project > satisfaction > services > about > process
-   One shared vertical rhythm + side gutter for every section.
-========================================================== */
+
+/* ══════════════════════════════════════
+   HOMEPAGE SECTION ORDER & RHYTHM
+   Order: Hero → Services → Projects → Satisfaction → About → Process
+   One shared vertical rhythm for every device. Only padding-block is set,
+   so each section keeps its own horizontal padding from the rules above.
+   ══════════════════════════════════════ */
 :root{
-  --sec-y: 110px;
-  --sec-x: 8%;
+  --section-y: clamp(64px, 9vw, 110px);
 }
+
+.services-section,
 .project-showcase,
 .sr-section,
-.services-section,
 .about-section,
 .process-section{
-  padding-top: var(--sec-y);
-  padding-bottom: var(--sec-y);
-  padding-left: var(--sec-x);
-  padding-right: var(--sec-x);
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
+  padding-block: var(--section-y);
+  position: relative;
+  border-top: 1px solid rgba(212,175,55,.10);
 }
-.hero{ min-height:100vh; min-height:100svh; box-sizing:border-box; }
 
-@media (max-width:1200px){
-  :root{ --sec-y:96px; --sec-x:6%; }
-}
+/* Satisfaction (#141115) now sits directly above About, so About and
+   Process get their own tones to keep the sections visually separate. */
+.about-section{ background:#050505; }
+.process-section{ background:#0b090c; }
+
+.about-container > *,
+.services-wrapper > *{ min-width:0; }
+.about-right .image-wrapper{ max-width:100%; }
+.about-right img{ max-width:100%; }
+
 @media (max-width:991px){
-  :root{ --sec-y:80px; --sec-x:5%; }
+  .about-container{ gap:40px; }
+  .services-wrapper{ gap:48px; }
 }
-@media (max-width:767px){
-  :root{ --sec-y:64px; --sec-x:20px; }
+@media (max-width:576px){
+  .about-container{ gap:32px; }
+  .services-wrapper{ gap:40px; }
+  .project-showcase{ padding-inline: 16px; }
 }
-@media (max-width:480px){
-  :root{ --sec-y:52px; --sec-x:16px; }
+
+@supports (min-height:100svh){
+  .hero{ min-height:100svh; }
 }
-@media (max-width:360px){
-  :root{ --sec-y:44px; --sec-x:14px; }
+
+
+/* ══════════════════════════════════════
+   HEADER LOGO — matches the footer logo
+   (gold-ringed circular badge, white → gold gradient bold text,
+   golden glow, soft hover wash + light sweep).
+   Footer rules (.logo-container, .logo-wrapper, .footer-logo,
+   .logo-content) are NOT modified.
+   ══════════════════════════════════════ */
+.nav-logo{
+  position:relative;
+  overflow:hidden;
+  gap:12px;
+  padding:4px 16px 4px 6px;
+  border-radius:50px;
+  min-width:0;
+  transition:.4s ease;
 }
-.project-showcase,
-.process-section{ overflow:hidden; }
+
+/* Same treatment as .logo-wrapper + .footer-logo */
+.nav-logo img{
+  width:54px;
+  height:54px;
+  min-width:54px;
+  padding:8px;
+  box-sizing:border-box;
+  object-fit:contain;
+  border-radius:50%;
+  border:2px solid rgba(212,175,55,.3);
+  background:linear-gradient(135deg, rgba(212,175,55,.2), rgba(255,215,0,.05));
+  filter:drop-shadow(0 0 12px rgba(255,215,0,.35));
+  transition:.4s;
+}
+
+/* Same font treatment as .logo-content h4 */
+.nav-logo span{
+  font-family:'Poppins', sans-serif;
+  font-size:22px;
+  font-weight:700;
+  line-height:1.2;
+  white-space:nowrap;
+  background:linear-gradient(135deg, #ffffff, #ffd700);
+  background-clip:text;
+  color:#d4af37;
+}
+
+.nav-logo::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(135deg, rgba(212,175,55,.15), transparent 60%);
+  border:1px solid rgba(212,175,55,.15);
+  opacity:0;
+  transition:.4s;
+  pointer-events:none;
+}
+.nav-logo::after{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-150%;
+  width:50px;
+  height:220%;
+  background:linear-gradient(90deg, transparent, rgba(255,215,0,.15), rgba(255,255,255,.45), rgba(255,215,0,.15), transparent);
+  transform:rotate(25deg);
+  transition:1s ease;
+  pointer-events:none;
+}
+@media (hover:hover){
+  .nav-logo:hover{ box-shadow:0 8px 24px rgba(212,175,55,.15); }
+  .nav-logo:hover::before{ opacity:1; }
+  .nav-logo:hover::after{ left:160%; }
+  .nav-logo:hover img{ border-color:#ffd700; }
+}
+
+/* Responsive: logo + menu toggle stay on one line on every device */
+@media (max-width:1200px){
+  .nav-logo span{ font-size:20px; }
+}
+@media (max-width:768px){
+  .nav-logo{ gap:10px; padding:3px 10px 3px 4px; }
+  .nav-logo img{ width:46px; height:46px; min-width:46px; padding:6px; }
+  .nav-logo span{ font-size:18px; }
+}
+@media (max-width:576px){
+  .nav-logo img{ width:42px; height:42px; min-width:42px; padding:5px; }
+  .nav-logo span{ font-size:16px; }
+}
+@media (max-width:380px){
+  .nav-logo{ gap:8px; padding-right:6px; }
+  .nav-logo img{ width:38px; height:38px; min-width:38px; }
+  .nav-logo span{ font-size:14px; }
+}
